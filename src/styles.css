@@ -1,0 +1,19 @@
+#content{min-height: 400px;}
+h3{
+    color: white;
+}
+#content{
+    margin-top: 50px;
+}
+label{
+    color: white;
+}
+body {
+    background-image: url('assets/img/background.jpg'); /* Adjust the filename as needed */
+    background-size: cover; /* This makes the image cover the entire element */
+    background-position: center; /* This centers the image */
+    height: 100vh; /* Set the height as needed */
+}
+
+  
+  
