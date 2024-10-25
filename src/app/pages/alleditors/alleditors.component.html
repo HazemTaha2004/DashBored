@@ -1,0 +1,26 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row p-2">
+    <div class="col">
+        <h3>Show all editors</h3>
+        <table class="table table-striped table-bordered table-light table-hover">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Editor name</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let editor of allEditors">
+                    <th scope="row">{{editor.id}}</th>
+                    <td>{{editor.name}}</td>
+                    <td><a class="btn btn-sm btn-primary" routerLink="/dashboard/editor/{{editor.id}}/show">edit</a></td>
+                    <td><a class="btn btn-sm btn-danger" routerLink="#" (click) = "deleteEditor(editor.id)">delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>

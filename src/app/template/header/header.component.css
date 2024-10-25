@@ -1,0 +1,14 @@
+
+.logo h1{
+    height: 60px;
+    color: white;
+    font: 36px tahoma;
+    line-height: 100px;
+}
+
+.banner a{
+    float: right !important;
+    display: block;
+    color: white;
+    text-decoration: none;
+}

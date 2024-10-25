@@ -1,0 +1,32 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row p-2">
+    <div class="col">
+        <h3>Show all News</h3>
+        <table class="table table-striped table-bordered table-light table-hover">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">News title</th>
+                    <th scope="col">main image</th>
+                    <th scope="col">belong to</th>
+                    <th scope="col">written By</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let news of allNews">
+                    <th scope="row">{{news.id}}</th>
+                    <td>{{news.title}}</td>
+                    <td><!--<img [src]="news.mainImage" alt="main image" class="img-thumbnail">--></td>
+                    <td><!--{{news.belongTo}}--></td>
+                    <td><!--{{news.writtenBy}}--></td>
+                    <td><button class="btn btn-sm btn-primary" routerLink="/dashboard/news/{{news.id}}/show">edit</button></td>
+                    <td><button class="btn btn-sm btn-danger" (click)="deleteNews(news.id)">delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>
