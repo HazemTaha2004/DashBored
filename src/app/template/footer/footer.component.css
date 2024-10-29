@@ -1,0 +1,42 @@
+
+/* Social media section background */
+footer .social-media {
+    background-color: #6351ce;
+    
+}
+
+/* Divider styles */
+footer h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Divider line */
+footer hr {
+    width: 160px;
+    background-color: #7c4dff;
+    height: 2px;
+}
+
+/* Contact icons */
+footer .fas {
+    margin-right: 1rem;
+}
+
+/* Copyright background color */
+footer .copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+li{
+    list-style: none;
+    margin-bottom: 16px;
+}
+li a:hover{
+    color: red;
+}
+
+.social-media a:hover{
+    border-radius: 1000px !important; 
+    color: red !important;
+
+}

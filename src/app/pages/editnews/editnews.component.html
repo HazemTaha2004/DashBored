@@ -1,0 +1,65 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row p-2">
+    <div class="col">
+        <h3>show News info</h3>
+        <form [formGroup]="editNewsForm" enctype="multipart/form-data" (submit)="updateNewsById()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">News Title</label>
+                <input formControlName="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div *ngIf="editNewsForm.get('title')?.invalid && editNewsForm.get('title')?.touched">
+                    <div *ngIf="editNewsForm.get('title')?.hasError('required')" class="alert  alert-danger" role="alert">
+                        title is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">News Content</label>
+                <textarea formControlName="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div *ngIf="editNewsForm.get('content')?.invalid && editNewsForm.get('content')?.touched">
+                    <div *ngIf="editNewsForm.get('content')?.hasError('required')" class="alert  alert-danger" role="alert">
+                        content is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Written by</label>
+                <select formControlName="id_editor" class="form-select" aria-label="Default select example">
+                    <option value="1">Ahmed Mohamed</option>
+                    <option value="2">Safaa Kamal</option>
+                    <option value="3">Mai Mahmoud</option>
+                    <option value="3">Taha Ali</option>
+                </select>
+                <div *ngIf="editNewsForm.get('id_editor')?.invalid && editNewsForm.get('id_editor')?.touched">
+                    <div *ngIf="editNewsForm.get('id_editor')?.hasError('required')" class="alert  alert-danger" role="alert">
+                        editor is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Belong to</label>
+                <select formControlName="id_category" class="form-select" aria-label="Default select example">
+                    <option value="1">Sport</option>
+                    <option value="2">Media</option>
+                    <option value="3">Talk show</option>
+                </select>
+                <div *ngIf="editNewsForm.get('id_category')?.invalid && editNewsForm.get('id_category')?.touched">
+                    <div *ngIf="editNewsForm.get('id_category')?.hasError('required')" class="alert  alert-danger" role="alert">
+                        category is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">main image</label>
+                <input formControlName="mainImage" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div *ngIf="editNewsForm.get('mainImage')?.invalid && editNewsForm.get('mainImage')?.touched">
+                    <div *ngIf="editNewsForm.get('mainImage')?.hasError('required')" class="alert  alert-danger" role="alert">
+                        main image is required
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="editNewsForm.invalid" class="btn btn-dark" >Update News</button>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

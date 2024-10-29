@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div id="content" class="row p-2">
+    <div class="col">
+        <h3>show Category info</h3>
+        <form [formGroup]="editCategoryForm" (submit)="updateCategoryById()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Category name</label>
+              <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div *ngIf="editCategoryForm.get('name')?.invalid && editCategoryForm.get('name')?.touched">
+                <div *ngIf="editCategoryForm.get('name')?.hasError('required')"  class="alert  alert-danger" role="alert">
+                  name is required
+                </div>
+                <div *ngIf="editCategoryForm.get('name')?.hasError('minlength')" class="alert  alert-danger" role="alert">
+                  the length of field name at least 3 char
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Managed by</label>
+                <select formControlName="id_editor" class="form-select" aria-label="Default select example">
+                    <option value="1">Ahmed Mohamed</option>
+                    <option value="2">Safaa Kamal</option>
+                    <option value="3">Mai Mahmoud</option>
+                    <option value="3">Taha Ali</option>
+                  </select>
+                  <div *ngIf="editCategoryForm.get('id_editor')?.invalid && editCategoryForm.get('id_editor')?.touched">
+                    <div *ngIf="editCategoryForm.get('id_editor')?.hasError('required')"  class="alert  alert-danger" role="alert">
+                      manager is required
+                    </div>
+                  </div>
+              </div>
+            <button [disabled]="editCategoryForm.invalid" routerLink="#" class="btn btn-dark" >update Category</button>
+          </form>
+    </div>
+</div>
+<app-footer></app-footer>
